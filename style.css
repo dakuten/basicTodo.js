@@ -1,0 +1,171 @@
+/*@font-face {
+    font-family: 'modern_pictogramsnormal';
+    src: url('modernpics-webfont.eot');
+    }
+    @font-face {
+    font-family: 'modern_pictogramsnormal';
+    src: url('modernpics-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+body, input {
+    font-family: "Helvetica Neue", sans-serif;
+}
+body *::selection{opacity: 0;}
+body *::-moz-selection{opacity: 0;}
+.checkmark{
+    font-family: 'modern_pictogramsnormal';
+    cursor: pointer;
+}
+
+#title {
+    font-weight: 900;
+    text-align: center;
+    font-size: 4em;
+    word-wrap: break-word;
+}
+#title input {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-weight: 900;
+    text-align: center;
+    font-size: inherit;
+    width: 100%;
+}
+#title input:focus {outline: 0;}
+
+#listapp {
+    /*border: solid;*/
+    position: relative;
+    width: 500px;
+    margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+    #listapp {width: 100%;}
+    body {font-size: 110%;}
+}
+
+
+#tasks {
+    width: 90%;
+    text-align: center;
+}
+#tasks > * {
+    width: 95%;
+    margin: auto;
+}
+#tasks > p{
+    text-align: center;
+    padding: 0;
+}
+
+#tasklist {
+    font-size: 3ex;
+}
+#tasklist > div{
+    vertical-align: top;
+    padding: 5px;
+    transition: opacity .5s;
+}
+#tasklist > div > * {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+}
+#tasklist .checkmark{
+    margin-right: 1ex;
+    width: 5%;
+}
+#tasklist .label{
+    margin-top: 0;
+    width: calc(95% - 1ex - 1px);
+    word-wrap: break-word;
+}
+#tasklist .label input{
+    width: 100%;
+    height: 100%;
+    font-size: inherit;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: inherit;
+}
+#tasklist .label input:focus {
+    outline: 0;
+}
+#tasklist > *:hover{
+    background-color: rgba(0,0,0, .005);
+}
+
+#addtask {
+    text-align: center;
+    padding: 0.5ex;
+    font-size: 3ex;
+    width: inherit;
+    border: 0;
+    border-bottom: 4px black solid;
+}
+#addtask:focus{outline: 0;}
+
+.modalWindow {
+    z-index: 2;
+    position: absolute; 
+    left: 15%; right: 15%;
+    margin: auto;
+    margin-top: 1em;
+    border: solid 2px;
+    padding: 1em;
+    background-color: #fff;
+    opacity: 1;
+}
+.modalWindow > h1 {
+    font-size: 2.5ex;
+    border-bottom: solid 1px grey;
+    padding-bottom: 1ex;
+    margin-bottom: 0;
+    width: 100%;
+}
+.modalWindow > p {
+    font-size: 1.8ex;
+    line-height: 2.5ex;
+    width: 100%;
+}
+.modalWindow > .buttons {text-align: right;}
+.modalWindow > .buttons > input[type="button"] {
+    text-align: center;
+    margin-right: 1em;
+    border: solid 1px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.modalWindow > .buttons > input[type="button"]:hover {
+    background-color: rgba(0,0,0, .005);
+}
+
+#veil {
+    z-index: 1;
+    position: absolute;
+    width:0;
+    height:0;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.modalWindow dl.commands dt {
+    font-family: "Source Code Pro", monospace;
+}
+.modalWindow dl.commands dd {
+    margin-bottom: 1ex;
+    border-left: solid 2px;
+    padding-left: 1ex;
+}
+/*#list > p::before{
+    margin-right: 1ex;
+    width: 5%;
+}
+.checked::before{content: "✔";}
+.unchecked::before{content: "✘";}*/
